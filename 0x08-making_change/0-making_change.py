@@ -9,7 +9,7 @@ def makeChange(coins, total):
     determine the fewest number of
     coins needed to meet a given amount total
     '''
-    n = len(coins)
+    m = len(coins)
     dp = [0] * (total + 1)
     dp[0] = 1
     if total <= 0:
