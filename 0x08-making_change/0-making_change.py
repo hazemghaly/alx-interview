@@ -9,7 +9,7 @@ def makeChange(coins, total):
     determine the fewest number of
     coins needed to meet a given amount total
     '''
-    m = len(coins)
+    n = len(coins)
     dp = [0] * (total + 1)
     dp[0] = 1
     if total <= 0:
@@ -19,3 +19,7 @@ def makeChange(coins, total):
             if coins[j] <= i:
                 dp[i] += dp[i - coins[j]]
     return dp[total] if dp[total] else -1
+
+    # else:
+    #     return min((makeChange(total - coin, coins) + [coin]
+    #                 for coin in coins if total >= coin), key=len)
