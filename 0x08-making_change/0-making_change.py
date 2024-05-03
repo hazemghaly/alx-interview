@@ -18,4 +18,4 @@ def makeChange(coins, total):
         for j in range(n):
             if coins[j] <= i:
                 dp[i] += dp[i - coins[j]]
-   return dp[total] if dp[total] else -1
+    return dp[total] if dp[total] else -1
