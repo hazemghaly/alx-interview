@@ -20,8 +20,9 @@ def isWinner(x, nums):
             continue
         for j in range(i + i, n + 1, i):
             primes[j - 1] = False
-    for i in nums:
-        if sum(primes[0:i + 1]) % 2 == 0:
+    for num in nums:
+        primes_count = sum(primes[:num + 1]) 
+        if primes_count % 2 == 1:
             marwin += 1
         else:
             benwin += 1
