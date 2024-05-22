@@ -20,12 +20,10 @@ def isWinner(x, nums):
             continue
         for j in range(i + i, n + 1, i):
             primes[j - 1] = False
-    for num in nums:
-        primes_count = sum(primes[:num + 1]) 
-        if primes_count % 2 == 1:
-            marwin += 1
-        else:
-            benwin += 1
+    for _, n in zip(range(x), nums):
+        primes_count = len(list(filter(lambda x: x, primes[0: n])))
+        benwin += primes_count % 2 == 0
+        marwin += primes_count % 2 == 1
     if marwin == benwin:
         return None
     if marwin > benwin:
